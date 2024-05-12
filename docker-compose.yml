@@ -14,13 +14,10 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - NODE_ENV=production
       - MONGO_URI=mongodb://mongodb:27017
       - JWT_SECRET=secret
     ports:
       - "3000:3000"
-    volumes:
-      - .:/app
     depends_on:
       - mongodb
 

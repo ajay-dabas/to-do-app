@@ -2,13 +2,11 @@ FROM node:20
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY . .
 
 RUN yarn install --frozen-lockfile
 
-RUN yarn --cwd ./client install --frozen-lockfile
-
-COPY . .
+RUN yarn --cwd client install --frozen-lockfile
 
 EXPOSE 3000
 
